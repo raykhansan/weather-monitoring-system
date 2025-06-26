@@ -1,0 +1,12 @@
+# Byte-compiled Python
+__pycache__/
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# Firebase service account key
+firebase_key.json
+
