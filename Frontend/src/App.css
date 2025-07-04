@@ -1,0 +1,289 @@
+/* ========== General Layout ========== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('assets/cc.jpg') no-repeat center center / cover;
+  color: #f0f0f5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.App {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* ========== Headings ========== */
+.app-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #eef2ff;
+}
+
+/* ========== Grid Layouts ========== */
+.dashboard-grid,
+.stats-grid,
+.weather-cards,
+.prediction-forecast-row,
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ========== Glass Card Style ========== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 1rem 4.5rem;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 25px rgba(37, 117, 252, 0.3);
+}
+
+/* ========== Stat Item ========== */
+.stat-item {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  gap: 0.5rem;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* ========== Timestamp ========== */
+.datetime {
+  font-size: 0.8rem;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* ========== Form ========== */
+.weather-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.input-text {
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+
+/* ========== Weather Cards ========== */
+.weather-card {
+  background: rgba(37, 117, 252, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.weather-icon {
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+}
+
+.weather-icon img {
+  width: 48px;
+  height: 48px;
+}
+
+.weather-label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.weather-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* ========== Forecast ========== */
+
+.forecast-card {
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.forecast-day {
+  font-size: 1rem;
+}
+
+.forecast-icon {
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+}
+
+.forecast-temp {
+  font-size: 1.2rem;
+}
+
+.forecast-desc {
+  font-size: 0.9rem;
+}
+
+/* ========== Sensor Card ========== */
+.sensor-item {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease;
+  width: 100%;
+}
+.sensor-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+
+/* Right side: icon and date */
+.sensor-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sensor-item:hover {
+  box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
+  transform: translateY(-3px);
+}
+
+.sensor-icon {
+  font-size: 2.5rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sensor-label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.sensor-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #75aaff;
+}
+
+/* ========== Responsive Adjustments ========== */
+@media (max-width: 1024px) {
+  .dashboard-grid,
+  .stats-grid,
+  .weather-cards,
+  .prediction-forecast-row,
+  .sensor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .app-title {
+    font-size: 1.5rem;
+  }
+
+  .sensor-item {
+    padding: 0.8rem;
+  }
+
+  .sensor-label,
+  .sensor-value {
+    font-size: 0.95rem;
+  }
+
+  .sensor-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-grid,
+  .stats-grid,
+  .weather-cards,
+  .prediction-forecast-row,
+  .sensor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-title {
+    font-size: 1.3rem;
+  }
+
+  .glass-card,
+  .stat-item,
+  .weather-card,
+  .forecast-card,
+  .sensor-item {
+    padding: 0.6rem;
+  }
+
+  .sensor-label,
+  .sensor-value {
+    font-size: 0.85rem;
+  }
+
+  .sensor-icon {
+    font-size: 1.8rem;
+  }
+}
